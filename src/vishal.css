@@ -1,0 +1,251 @@
+/* * get in touch  */
+.cursor-pointer {
+  cursor: none;
+}
+.text-stroke-black {
+  /* color: transparent; */
+  /* -webkit-text-stroke: 1px #000; */
+  /* transition: all 0.4s ease; */
+}
+.text-stroke-white {
+  color: #b5b5b5;
+  /* -webkit-text-stroke: 1px #b5b5b5; */
+  /* -webkit-text-stroke: none; */
+  /* transition: all 0.4s ease; */
+  font-size: 80px;
+}
+@media screen and (max-width: 768px) {
+  .text-stroke-white {
+    font-size: 4rem;
+  }
+}
+.getintouch-graybg {
+  transform: translateX(0%);
+  transition: transform 0.4s ease-in-out;
+}
+.getintouch-root:hover .getintouch-graybg {
+  transform: translateX(100%);
+}
+.getintouch-root:hover .text-stroke-black {
+  color: black;
+  -webkit-text-stroke: none;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 7px;
+  overflow: overlay;
+  right: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+  z-index: 900 !important;
+}
+
+/* work side nav text */
+.work-side-nav-text {
+  color: #808080b6;
+}
+
+/* work bg translate */
+.work-bg-translate {
+  transition-property: width;
+  transition-duration: 2s;
+}
+
+/* hiding highlight color on phone on tab */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.marquee-container > .overlay {
+  /* hide */
+  display: none !important;
+}
+
+/* animation  */
+@keyframes landing-page-text-animation {
+  0% {
+    transform: translate3d(0px, 0.8%, 0px) scale3d(1, 1, 1) rotateX(-12.3795deg) rotateY(0deg)
+      rotateZ(0deg) skew(1.2048deg, 0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0px, -35%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+.landing-page-text {
+  transform-style: preserve-3d;
+  animation: landing-page-text-animation 2s ease-in-out forwards;
+}
+.work-landing-text {
+  transform: translate3d(0px, -45%, 0px);
+}
+
+/* google sans font */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Google Sans Regular'),
+    local('GoogleSans-Regular'),
+    url(https://fonts.gstatic.com/s/googlesans/v9/2-h9-kvQJXV-yDV-F1oQXPi3fY6323mHWp1nkj8.woff2)
+      format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Google Sans Medium'),
+    local('GoogleSans-Medium'),
+    url(https://fonts.gstatic.com/s/googlesans/v9/2-h9-kvQJXV-yDV-F1oQXPi3fY6323mHWp1nkj8.woff2)
+      format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Google Sans Bold'),
+    local('GoogleSans-Bold'),
+    url(https://fonts.gstatic.com/s/googlesans/v9/2-h9-kvQJXV-yDV-F1oQXPi3fY6323mHWp1nkj8.woff2)
+      format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+    U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.font-google-sans {
+  font-family: 'Google Sans', sans-serif;
+}
+.vertical-line-parent {
+  display: block;
+  position: absolute;
+}
+.work-hero-vertical-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(218, 218, 218, 0.24);
+  -webkit-animation: lineanim 5s infinite;
+  animation: lineanim infinite 5s linear;
+}
+/* animate increasing and decreasing height of line */
+@keyframes lineanim {
+  0% {
+    -webkit-transform: translateY(0) scaleY(1);
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translateY(0) scaleY(1);
+    transform: translateY(0) scaleY(1);
+  }
+  75% {
+    -webkit-transform: translateY(30px) scaleY(0);
+    transform: translateY(30px) scaleY(0);
+  }
+  76% {
+    -webkit-transform: translateY(-20px) scaleY(0);
+    transform: translateY(-20px) scaleY(0);
+  }
+  93% {
+    -webkit-transform: translateY(0) scaleY(1);
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.mb-130 {
+  margin-bottom: 130px;
+}
+.mt-130 {
+  margin-top: 130px;
+}
+.mt-150 {
+  margin-top: 150px;
+}
+.pb-130 {
+  padding-bottom: 130px;
+}
+.pt-130 {
+  padding-top: 130px;
+}
+.pt-140 {
+  padding-top: 140px;
+}
+.pt-150 {
+  padding-top: 150px;
+}
+/* media query */
+@media only screen and (max-width: 600px) {
+  .mb-130 {
+    margin-bottom: 20px;
+  }
+  .mt-130 {
+    margin-top: 20px;
+  }
+  .mt-150 {
+    margin-top: 30px;
+  }
+  .pb-130 {
+    padding-bottom: 20px;
+  }
+  .pt-130 {
+    padding-top: 20px;
+  }
+  .pt-140 {
+    padding-top: 30px;
+  }
+  .pt-150 {
+    padding-top: 30px;
+  }
+}
+
+#social-proof .swiper-pagination-bullet-active {
+  width: 24px !important;
+  height: 2px !important;
+  background: #ffee8c !important;
+}
+#social-proof .swiper-pagination {
+  bottom: 120px !important;
+}
+
+/* pagination swiper */
+.swiper-pagination-bullet {
+  width: 16px !important;
+  height: 2px !important;
+  opacity: 1 !important;
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  background: #4e4e4e !important;
+}
+
+#work .swiper-pagination-bullet-active {
+  width: 24px !important;
+  height: 2px !important;
+  background: #ffffff !important;
+}

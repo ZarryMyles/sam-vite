@@ -1,0 +1,61 @@
+/* Lato */
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: 'Lato Medium';
+  src: url('./fonts/lato/Lato-Medium.ttf');
+}
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('./fonts/lato/Lato-Light.ttf');
+}
+@font-face {
+  font-family: 'Lato-Italic';
+  src: url('./fonts/lato/Lato-Italic.ttf');
+}
+@font-face {
+  font-family: 'Lato-Light-Italic';
+  src: url('./fonts/lato/Lato-LightItalic.ttf');
+}
+@font-face {
+  font-family: 'Lato-Light-Italic2';
+  src: url('./fonts/lato/Lato-LightItalic(2).ttf');
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('./fonts/lato/Lato-Bold.ttf');
+}
+
+.font-lato {
+  font-family: 'Lato';
+}
+.font-lato-med {
+  font-family: 'Lato Medium';
+}
+.font-lato-light {
+  font-family: 'Lato-Light';
+}
+.font-lato-italic {
+  font-family: 'Lato-Italic';
+}
+.font-lato-light-italic {
+  font-family: 'Lato-Light-Italic';
+}
+.font-lato-light-italic2 {
+  font-family: 'Lato-Light-Italic2';
+}
+.font-lato-bold {
+  font-family: 'Lato-Bold';
+}
+
+/* lora */
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/lora/Lora-Italic.ttf');
+}
+
+.font-lora-italic {
+  font-family: 'Lora';
+}
