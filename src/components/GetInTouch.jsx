@@ -31,14 +31,6 @@ const GetInTouch = ({ imageEnter, largeEnter, location }) => {
 
           <div className="font-lora-italic flex flex-col md:flex-row md:items-center gap-2 z-20 leading-6 md:w-auto font-normal tracking-[0.01em] md:tracking-1 text-base md:text-[22px]  text-brand-white">
             <a
-              href="mailto:shradhakaba@gmail.com"
-              onMouseEnter={largeEnter}
-              onMouseLeave={imageEnter}
-              className="py-2 px-4 md:px-[14px] md:py-3 border-2 text-brand-gold border-brand-fadedGold rounded-full w-max"
-            >
-              Lets create
-            </a>
-            <a
               href="http://www.linkedin.com/in/shradha-b-k"
               onMouseEnter={largeEnter}
               target="_blank"
@@ -46,7 +38,8 @@ const GetInTouch = ({ imageEnter, largeEnter, location }) => {
               onMouseLeave={imageEnter}
               className=" font-lora-italic pl-3 md:pl-0"
             >
-              more soulful stories and delightful experiences
+              <span className="text-brand-gold">Lets create</span> more soulful stories and
+              delightful experiences
             </a>
           </div>
         </div>

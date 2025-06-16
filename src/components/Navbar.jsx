@@ -6,15 +6,15 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
   const resumeLink = import.meta.env.VITE_RESUME_URL
   const links = [
     {
-      name: 'Research',
-      link: '/#research',
+      name: 'Design',
+      link: '/#design',
       noHome: '/',
       targ: '',
     },
     {
-      name: 'Design',
-      link: '/design',
-      noHome: '/design',
+      name: 'Research',
+      link: '/#research',
+      noHome: '/',
       targ: '',
     },
     {
@@ -104,6 +104,34 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
           {callHome ? (
             <Link
               activeClass="active"
+              to="design"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="block md:inline-block no-underline border-none"
+            >
+              <a
+                href="/#design"
+                onMouseEnter={largeEnter}
+                onMouseLeave={imageEnter}
+                className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+              >
+                Design
+              </a>
+            </Link>
+          ) : (
+            <a
+              href="/"
+              onMouseEnter={largeEnter}
+              onMouseLeave={imageEnter}
+              className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+            >
+              Design
+            </a>
+          )}
+          {callHome ? (
+            <Link
+              activeClass="active"
               to="research"
               spy={true}
               smooth={true}
@@ -129,15 +157,6 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
               Research
             </a>
           )}
-          <a
-            onMouseEnter={largeEnter}
-            onMouseLeave={imageEnter}
-            href="/design"
-            onClick={uncheckNav}
-            className="font-lato text-lg  top-0 overflow-hidden flex flex-row items-center"
-          >
-            Design
-          </a>
           <a
             onMouseEnter={largeEnter}
             onMouseLeave={imageEnter}
@@ -211,6 +230,34 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
           {callHome ? (
             <Link
               activeClass="active"
+              to="design"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="block md:inline-block no-underline border-none"
+            >
+              <a
+                href="/#design"
+                onMouseEnter={largeEnter}
+                onMouseLeave={imageEnter}
+                className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+              >
+                Design
+              </a>
+            </Link>
+          ) : (
+            <a
+              href="/"
+              onMouseEnter={largeEnter}
+              onMouseLeave={imageEnter}
+              className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+            >
+              Design
+            </a>
+          )}
+          {callHome ? (
+            <Link
+              activeClass="active"
               to="research"
               spy={true}
               smooth={true}
@@ -236,15 +283,6 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
               Research
             </a>
           )}
-          <a
-            onMouseEnter={largeEnter}
-            onMouseLeave={imageEnter}
-            href="/design"
-            onClick={uncheckNav}
-            className="font-lato text-lg  top-0 overflow-hidden flex flex-row items-center"
-          >
-            Design
-          </a>
           <a
             onMouseEnter={largeEnter}
             onMouseLeave={imageEnter}

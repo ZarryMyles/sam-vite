@@ -38,7 +38,7 @@ const LandingSection = ({ imageEnter, largeEnter }) => {
               position: 'inherit',
             }}
           >
-            Hey I’m <span className="font-lora-italic ml-1">Shradha</span>
+            Hey, I’m <span className="font-lora-italic ml-1">Shradha!</span>
             <br />I work with products driven by <span className="font-lora-italic">
               purpose
             </span>{' '}

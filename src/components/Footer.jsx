@@ -132,8 +132,8 @@ const Footer = ({ imageEnter, largeEnter }) => {
       </div>
       <div className=" footerDiv2 shadow-xl text-[11px] text-center  font-lato text-brand-gray flex flex-col items-center justify-center p-5 md:p-10">
         <div>
-          © {new Date().getFullYear()}. shradhab. All Rights Reserved. Developed by{' '}
-          <span>
+          © {new Date().getFullYear()}. Shradha B. All Rights Reserved
+          {/* <span>
             <a
               href="https://www.mahanth.dev"
               target="_blank"
@@ -144,7 +144,7 @@ const Footer = ({ imageEnter, largeEnter }) => {
             >
               Mahanth
             </a>
-          </span>
+          </span> */}
           <br />
         </div>
       </div>

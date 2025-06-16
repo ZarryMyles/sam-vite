@@ -145,7 +145,7 @@ const WorkItemMobile = ({ keythingy, item, isSmallerWidth }) => {
                 }}
               >
                 <p
-                  className={`font-lora-italic text-[#fefefe] text-[22px] font-medium leading-9 tracking-[0.33px]`}
+                  className={`font-lora-italic text-[#fefefe] text-[22px] md:font-medium leading-9 tracking-[1.5%]`}
                 >
                   {item.title}
                 </p>
@@ -177,6 +177,16 @@ const NewWork = ({ imageEnter, largeEnter }) => {
   const recentWorkInfo = [
     {
       company: 'Hike',
+      title: "Testing 'Tap to Choose' Feature in Ludo Game",
+      subTitle: 'Rush By Hike, A Real Money Gaming App',
+      background: HikeBG2,
+      backgroundMob: HikeBG2mob,
+      link: 'https://morning-jackrabbit-815.notion.site/Concept-Evaluation-Testing-Tap-to-Choose-Feature-in-Ludo-Game-74217ff086d04d7cbf8a56cb81d87b9f?pvs=4',
+      labels: ['B2C', 'Gaming', 'Usability Test'],
+      // islocked: true,
+    },
+    {
+      company: 'Hike',
       title: 'Diving into the Realm of Users through User Immersion',
       subTitle: 'Rush By Hike, A Real Money Gaming App',
       background: HikeBG,
@@ -184,17 +194,7 @@ const NewWork = ({ imageEnter, largeEnter }) => {
       mobWidth: 290,
       // islocked: true,
       link: 'https://www.figma.com/proto/X6IFgiegAQerDSBe5RKBs3/Case-study-stack?page-id=1%3A2&type=design&node-id=1-8501&viewport=758%2C738%2C0.24&t=jbsnjihAGYGdgkII-1&scaling=contain&starting-point-node-id=1%3A8284&mode=design',
-      labels: ['B2C', 'Gaming', 'Field Study', 'User Interviews'],
-    },
-    {
-      company: 'Hike',
-      title: "Testing 'Tap to Choose' Feature in Ludo Game",
-      subTitle: 'Rush By Hike, A Real Money Gaming App',
-      background: HikeBG2,
-      backgroundMob: HikeBG2mob,
-      link: 'https://morning-jackrabbit-815.notion.site/Concept-Evaluation-Testing-Tap-to-Choose-Feature-in-Ludo-Game-74217ff086d04d7cbf8a56cb81d87b9f?pvs=4',
-      labels: ['Evaluative Study', 'Usability Test', 'User Interviews'],
-      // islocked: true,
+      labels: ['B2C', 'Gaming', 'Field Study', 'Interviews'],
     },
   ]
 
@@ -218,7 +218,7 @@ const NewWork = ({ imageEnter, largeEnter }) => {
       link: '',
       islocked: true,
       smallerTitle: true,
-      labels: ['B2B', 'Healthcare', 'Product Design', 'Coming Soon'],
+      labels: ['B2B', 'Healthcare', 'Product Design'],
     },
   ]
 
@@ -248,12 +248,12 @@ const NewWork = ({ imageEnter, largeEnter }) => {
 
   return (
     <div
-      id="research"
-      className="min-h-screen pt-[80px] md:pt-[90px] md:px-24 md:py-5 flex flex-col text-white w-full md:gap-32"
+      id="design"
+      className="min-h-screen pt-[80px] md:pt-[90px] md:px-24 md:py-5 flex flex-col text-white w-full md:gap-16"
     >
       <div className="flex flex-col md:gap-10">
         <h3 className="text-[#979797] font-lato-italic md:text-3xl px-[22px] md:px-0 pb-5 md:pb-0 text-lg font-medium track">
-          Best Design Work
+          Design Work
         </h3>
         <div className="hidden md:flex md:justify-between md:items-center gap-[18px]">
           {designWork.map((item, index) => (
@@ -278,9 +278,9 @@ const NewWork = ({ imageEnter, largeEnter }) => {
           />
         </div>
       </div>
-      <div className="flex flex-col md:gap-10 mt-8 md:mt-0">
+      <div id="research" className="flex flex-col md:gap-10 mt-0 pt-20 md:pt-16">
         <h3 className="text-[#979797] font-lato-italic md:text-3xl px-[22px] md:px-0 pb-5 md:pb-0 text-lg font-medium track">
-          Best Research Work
+          Research Work
         </h3>
         <div className="hidden md:flex md:justify-between gap-[18px]">
           {recentWorkInfo.map((item, index) => (
