@@ -26,7 +26,7 @@ const LandingSection = ({ imageEnter, largeEnter }) => {
       onMouseLeave={imageEnter}
     >
       <div className="relative w-full h-full md:m-auto md:max-w-7xl ">
-        <div className="relative flex flex-col justify-center items-center md:block h-full md:mt-0 md:py-52 w-full">
+        <div className="relative flex flex-col justify-center items-center md:block h-full md:mt-0 md:py-60 w-full">
           <h1
             className="text-[26px] leading-[40px] md:leading-normal z-20 md:text-5xl md:ml-28 font-thin mt-[200px] md:mt-20 w-full mx-auto md:w-max font-lato-light-italic landing-page-text  "
             onMouseEnter={largeEnter}

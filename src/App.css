@@ -2,6 +2,10 @@
   cursor: none;
 }
 
+body {
+  background-color: #0d0d0d;
+}
+
 .cursor {
   background-color: #c7d9ff;
   height: 20px;

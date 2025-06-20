@@ -7,7 +7,7 @@ const WorkLogos = ({ imageEnter, largeEnter }) => {
     },
     {
       name: 'Google Developers',
-      link: 'https://www.linkedin.com/in/dscreva',
+      link: 'https://www.instagram.com/gdscreva/',
     },
     {
       name: 'Thyrocare',
@@ -23,7 +23,7 @@ const WorkLogos = ({ imageEnter, largeEnter }) => {
     },
     {
       name: 'Google Developers',
-      link: 'https://www.linkedin.com/in/dscreva',
+      link: 'https://www.instagram.com/gdscreva/',
     },
     {
       name: 'Thyrocare',
@@ -39,7 +39,7 @@ const WorkLogos = ({ imageEnter, largeEnter }) => {
     },
     {
       name: 'Google Developers',
-      link: 'https://www.linkedin.com/in/dscreva',
+      link: 'https://www.instagram.com/gdscreva/',
     },
     {
       name: 'Thyrocare',
@@ -55,7 +55,7 @@ const WorkLogos = ({ imageEnter, largeEnter }) => {
     },
     {
       name: 'Google Developers',
-      link: 'https://www.linkedin.com/in/dscreva',
+      link: 'https://www.instagram.com/gdscreva/',
     },
     {
       name: 'Thyrocare',

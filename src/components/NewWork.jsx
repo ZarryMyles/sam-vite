@@ -77,7 +77,7 @@ const WorkItem = ({ keythingy, item, imageEnter, largeEnter }) => {
                 )}
               </p>
               <p
-                className={`font-lora-italic md:pt-3 text-[#fefefe] text-[34px] tracking-[0.51px] ${
+                className={`font-lora-italic md:pt-3 text-[#fefefe] text-[32px] tracking-[0.51px] ${
                   item.smallerTitle && 'md:pr-28'
                 }`}
               >
@@ -215,8 +215,8 @@ const NewWork = ({ imageEnter, largeEnter }) => {
       subTitle: '',
       background: PharmEasy2,
       backgroundMob: PharmEasy2Mob,
-      link: '',
-      islocked: true,
+      link: 'https://www.figma.com/proto/AD3nSJ9faMOWHUTmM0dpRQ/Graph-Report--Copy-?page-id=4005%3A3968&node-id=4006-5975&viewport=216%2C436%2C0.21&t=sWgWGZDxGmQLUcl7-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=4311%3A23459',
+      islocked: false,
       smallerTitle: true,
       labels: ['B2B', 'Healthcare', 'Product Design'],
     },
