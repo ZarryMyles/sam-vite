@@ -80,9 +80,8 @@ const WorkItem = ({ keythingy, item, imageEnter, largeEnter }) => {
                 className={`font-lora-italic md:pt-3 text-[#fefefe] text-[32px] tracking-[0.51px] ${
                   item.smallerTitle && 'md:pr-28'
                 }`}
-              >
-                {item.title}
-              </p>
+                dangerouslySetInnerHTML={{ __html: item.title }}
+              />
               {item.isVideo && (
                 <a href={item.videoLink} className="md:mt-7 z-40" target="_blank" rel="noreferrer">
                   <img src={Player} alt="Player icon" width={62} height={62} />
@@ -141,14 +140,13 @@ const WorkItemMobile = ({ keythingy, item, isSmallerWidth }) => {
               </p>
               <div
                 style={{
-                  width: `${item.mobWidth ? item.mobWidth : isSmallerWidth ? '290' : '270'}px`,
+                  width: `${item.mobWidth ? item.mobWidth : isSmallerWidth ? '390' : '270'}px`,
                 }}
               >
                 <p
                   className={`font-lora-italic text-[#fefefe] text-[22px] md:font-medium leading-9 tracking-[1.5%]`}
-                >
-                  {item.title}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: item.titleMob }}
+                />
                 {item.isVideo && (
                   <a
                     href={item.videoLink}
@@ -177,7 +175,8 @@ const NewWork = ({ imageEnter, largeEnter }) => {
   const recentWorkInfo = [
     {
       company: 'Hike',
-      title: "Testing 'Tap to Choose' Feature in Ludo Game",
+      title: "Testing 'Tap to Choose' Feature<br />in Ludo Game",
+      titleMob: "Testing 'Tap to Choose'<br />Feature in Ludo Game",
       subTitle: 'Rush By Hike, A Real Money Gaming App',
       background: HikeBG2,
       backgroundMob: HikeBG2mob,
@@ -187,7 +186,8 @@ const NewWork = ({ imageEnter, largeEnter }) => {
     },
     {
       company: 'Hike',
-      title: 'Diving into the Realm of Users through User Immersion',
+      title: 'Diving into the Realm of Users<br />through User Immersion',
+      titleMob: 'Diving into the Realm of<br />Users through User<br />Immersion',
       subTitle: 'Rush By Hike, A Real Money Gaming App',
       background: HikeBG,
       backgroundMob: HikeBGmob,
@@ -201,7 +201,8 @@ const NewWork = ({ imageEnter, largeEnter }) => {
   const designWork = [
     {
       company: 'PHARMEASY',
-      title: 'Redesigning NPS experience to drive more responses & better scores.',
+      title: 'Redesigning NPS experience to<br />drive more responses<br />& better scores.',
+      titleMob: 'Redesigning NPS experience<br />to drive more responses<br />& better scores.',
       subTitle: 'BillEasy, In-house Invoicing Software',
       background: PharmEasy1,
       backgroundMob: PharmEasy1Mob,
@@ -211,7 +212,8 @@ const NewWork = ({ imageEnter, largeEnter }) => {
     },
     {
       company: 'Thyrocare · PharmEasY',
-      title: 'Optimizing Marker Test selection for Labs to prevent critical errors.',
+      title: 'Optimizing Marker Test<br />selection for Labs to prevent<br />critical errors.',
+      titleMob: 'Optimizing Marker Test<br />selection for Labs to<br />prevent critical errors.',
       subTitle: '',
       background: PharmEasy2,
       backgroundMob: PharmEasy2Mob,

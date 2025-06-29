@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ReactComponent as Quote } from '../assets/icons/quoteWhite.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 
 import tanu from '../assets/feedback/tanu.png?url'
 import prashanth from '../assets/feedback/prashanth.png?url'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 
 // feedback
 const feedbacks = [
@@ -27,15 +28,79 @@ const feedbacks = [
       Shradha stands out for her openness to collaboration and feedback, as well as her strong communication skills. Her proactive approach and dedication allowed her to independently manage key projects successfully.`,
   },
 ]
+
 const SocialProof = ({ imageEnter }) => {
-  const pagination = {
-    clickable: true,
-  }
+  const pagination = { clickable: true }
   const [feedback, setFeedback] = useState(feedbacks[0])
   const [fade, setFade] = useState(false)
+  const [hasInteracted, setHasInteracted] = useState(false)
+
+  const sectionRef = useRef(null)
+  const [inView, setInView] = useState(false)
+  const intervalRef = useRef(null)
+  const swiperRef = useRef(null) // ← Swiper instance goes here
+
+  // 1) Observe when this section scrolls into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  // 2) Once inView && no manual interaction, start auto-advance
+  useEffect(() => {
+    if (inView && !hasInteracted) {
+      // start Swiper autoplay
+      swiperRef.current?.autoplay.start()
+    }
+  }, [inView, hasInteracted])
+
+  // Stop autoplay when user manually interacts
+  useEffect(() => {
+    if (hasInteracted) {
+      swiperRef.current?.autoplay.stop()
+    }
+  }, [hasInteracted])
+
+  // Desktop fallback: also advance the feedback state every 10s
+  useEffect(() => {
+    if (inView && !hasInteracted) {
+      intervalRef.current = setInterval(() => {
+        setFade(true)
+        setTimeout(() => {
+          setFeedback((prev) => {
+            const idx = feedbacks.findIndex((f) => f.name === prev.name)
+            return feedbacks[(idx + 1) % feedbacks.length]
+          })
+          setFade(false)
+        }, 800)
+      }, 10000)
+      return () => clearInterval(intervalRef.current)
+    }
+  }, [inView, hasInteracted])
+
+  // Manual click: clear interval & stop autoplay
+  const handleManual = (item) => {
+    clearInterval(intervalRef.current)
+    setHasInteracted(true)
+    setFade(true)
+    setTimeout(() => {
+      setFeedback(item)
+      setFade(false)
+    }, 800)
+  }
 
   return (
-    <div id="social-proof" className="w-full h-full mx-auto">
+    <div id="social-proof" ref={sectionRef} className="w-full h-full mx-auto">
+      {/* desktop */}
       <div
         onMouseEnter={imageEnter}
         className="hidden px-5 md:px-24 font-lato py-10 md:py-20 md:pt-0 md:flex items-center justify-center my-10 md:my-5 bg-white dark:bg-brand-black transition-all duration-500"
@@ -88,14 +153,9 @@ const SocialProof = ({ imageEnter }) => {
             <div className="flex justify-center items-center w-full">
               {feedbacks.map((item) => (
                 <div
+                  key={item.name}
                   className="py-4 cursor-pointer"
-                  onClick={() => {
-                    setFade(true)
-                    setTimeout(() => {
-                      setFeedback(item)
-                      setFade(false)
-                    }, 800)
-                  }}
+                  onClick={() => handleManual(item)}
                 >
                   <div
                     style={{
@@ -122,15 +182,21 @@ const SocialProof = ({ imageEnter }) => {
           />
         </div>
       </div>
-      {/* mobile version */}
+
+      {/* mobile */}
       <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         pagination={pagination}
-        modules={[Pagination]}
-        className="md:!hidden mySwiper z-10 "
+        modules={[Pagination, Autoplay]}
+        className="md:!hidden mySwiper z-10"
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: true,
+        }}
         loop
       >
-        {feedbacks.map((feedback) => (
-          <SwiperSlide className="md:hidden w-full h-full">
+        {feedbacks.map((item) => (
+          <SwiperSlide key={item.name} className="md:hidden w-full h-full">
             <div className="px-5 md:px-24 font-lato py-[60px] md:py-20 md:pt-0 flex items-center justify-center my-10 md:my-5  bg-brand-black transition-all duration-500">
               <div className="  flex h-[max-content]  bg-brand-darkGrey2 pt-10  text-brand-gray w-full px-5  pb-[120px] md:p-24   flex-col justify-between md:items-center  relative">
                 <div className="  text-brand-gray w-full ">
@@ -152,29 +218,23 @@ const SocialProof = ({ imageEnter }) => {
                   </div>
                   {/* description */}
                   <div
-                    className={`font-lato-light-italic2 text-brand-gray text-base  w-full  mt-10 mb-6 tracking-1  transition-opacity ease-linear duration-1000  leading-[30px] md:leading-8  text-justify  ${
-                      fade ? 'opacity-0' : ''
-                    } `}
+                    className="font-lato-light-italic2 text-brand-gray text-base  w-full  mt-10 mb-6 tracking-1  transition-opacity ease-linear duration-1000  leading-[30px] md:leading-8  text-justify"
                     style={{ whiteSpace: 'pre-line' }}
                   >
-                    {feedback.feedback}
+                    {item.feedback}
                   </div>
                 </div>
                 {/* name */}
-                <div
-                  className={`text-black font-lato-light flex items-center dark:text-white tracking-wider text-xl   ease-linear duration-1000 transition-opacity  ${
-                    fade ? 'opacity-0' : ''
-                  } `}
-                >
+                <div className="text-black font-lato-light flex items-center dark:text-white tracking-wider text-xl   ease-linear duration-1000 transition-opacity  ">
                   <div
                     className="w-10 md:w-14 h-10 md:h-14 rounded-full  bg-brand-gray bg-cover bg-center bg-no-repeat mr-5 "
                     style={{
-                      backgroundImage: `url(${feedback.image})`,
+                      backgroundImage: `url(${item.image})`,
                     }}
                   />
                   <div className=" flex tracking-1 md:tracking-3 ">
                     <div className="text-xs font-light md:text-xl">
-                      {feedback.name}, {feedback.company}
+                      {item.name}, {item.company}
                     </div>
                   </div>
                 </div>

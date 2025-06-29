@@ -185,14 +185,23 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
               </a>
             </Link>
           ) : (
-            <a
-              href={callHome ? '/#get-in-touch' : '/'}
-              onMouseEnter={largeEnter}
-              onMouseLeave={imageEnter}
-              className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+            <Link
+              activeClass="active"
+              to="footer-main"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="block md:inline-block no-underline border-none"
             >
-              Contact
-            </a>
+              <a
+                href="/#footer-main"
+                onMouseEnter={largeEnter}
+                onMouseLeave={imageEnter}
+                className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+              >
+                Contact
+              </a>
+            </Link>
           )}
           <a
             onMouseEnter={largeEnter}
@@ -311,14 +320,23 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
               </a>
             </Link>
           ) : (
-            <a
-              href="/"
-              onMouseEnter={largeEnter}
-              onMouseLeave={imageEnter}
-              className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+            <Link
+              activeClass="active"
+              to="footer-main"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="block md:inline-block no-underline border-none"
             >
-              Contact
-            </a>
+              <a
+                href="/#footer-main"
+                onMouseEnter={largeEnter}
+                onMouseLeave={imageEnter}
+                className="text-lg font-lato cursor-pointer block md:inline-block no-underline border-none"
+              >
+                Contact
+              </a>
+            </Link>
           )}
 
           <a
