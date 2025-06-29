@@ -29,7 +29,10 @@ const GetInTouch = ({ imageEnter, largeEnter, location }) => {
             Get In Touch
           </div>
 
-          <div className="font-lora-italic flex flex-col md:flex-row md:items-center gap-2 z-20 leading-6 md:w-auto font-normal tracking-[0.01em] md:tracking-1 text-base md:text-[22px]  text-brand-white">
+          <div
+            id="linkedInGetInTouch"
+            className="font-lora-italic flex flex-col md:flex-row md:items-center gap-2 z-20 leading-6 md:w-auto font-normal tracking-[0.01em] md:tracking-1 text-base md:text-[22px]  text-brand-white"
+          >
             <a
               href="http://www.linkedin.com/in/shradha-b-k"
               onMouseEnter={largeEnter}

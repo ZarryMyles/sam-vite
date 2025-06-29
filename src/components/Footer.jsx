@@ -35,6 +35,7 @@ const Footer = ({ imageEnter, largeEnter }) => {
       iconColor: linkedinColor,
       link: 'https://www.linkedin.com/in/shradha-b-k',
       target: '_blank',
+      id: 'linkedInFooter',
     },
     {
       icon: mail,
@@ -117,6 +118,7 @@ const Footer = ({ imageEnter, largeEnter }) => {
               target={social.target}
               rel="noreferrer"
               className="text-brand-gray font-lato flex items-center  text-sm md:text-lg md:w-max  my-2 md:my-0 transform hover:scale-110 transition-transform duration-300 ease-in-out"
+              id={social.id ?? ''}
             >
               {social.icon && (
                 <img
@@ -133,7 +135,7 @@ const Footer = ({ imageEnter, largeEnter }) => {
       <div className=" footerDiv2 shadow-xl text-[11px] text-center  font-lato text-brand-gray flex flex-col items-center justify-center p-5 md:p-10">
         <div>
           © {new Date().getFullYear()}. Shradha B. All Rights Reserved. Developed by{' '}
-          <span>
+          <span id="mahanth">
             <a
               href="https://www.mahanth.dev"
               target="_blank"
