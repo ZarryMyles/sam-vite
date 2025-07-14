@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 import $ from 'jquery'
 
 const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
-  const resumeLink = import.meta.env.VITE_RESUME_URL
+  // const resumeLink = import.meta.env.VITE_RESUME_URL
   const links = [
     {
       name: 'Design',
@@ -29,12 +29,12 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
       noHome: '/',
       targ: '',
     },
-    {
-      name: 'Resume',
-      targ: '_blank',
-      noHome: resumeLink,
-      link: resumeLink,
-    },
+    // {
+    //   name: 'Resume',
+    //   targ: '_blank',
+    //   noHome: resumeLink,
+    //   link: resumeLink,
+    // },
   ]
 
   // Functions for mobile navbar slider button
@@ -203,7 +203,7 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
               </a>
             </Link>
           )}
-          <a
+          {/* <a
             onMouseEnter={largeEnter}
             onMouseLeave={imageEnter}
             target="_blank"
@@ -213,7 +213,7 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
             className="font-lato text-lg  top-0 overflow-hidden flex flex-row items-center"
           >
             Resume
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -339,7 +339,7 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
             </Link>
           )}
 
-          <a
+          {/* <a
             onMouseEnter={largeEnter}
             onMouseLeave={imageEnter}
             target="_blank"
@@ -349,7 +349,7 @@ const Navbar = ({ largeEnter, imageEnter, defaultColor, callHome }) => {
             className="font-lato text-lg  top-0 overflow-hidden flex flex-row items-center"
           >
             Resume
-          </a>
+          </a> */}
         </div>
       </div>
 

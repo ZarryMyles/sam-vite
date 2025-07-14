@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import resume from '../assets/icons/socials/resume.png'
-import resumeColor from '../assets/icons/socials/resumeColor.png'
+// import resume from '../assets/icons/socials/resume.png'
+// import resumeColor from '../assets/icons/socials/resumeColor.png'
 import linkedin from '../assets/icons/socials/linkedin.png'
 import linkedinColor from '../assets/icons/socials/linkedinColor.png'
 import mail from '../assets/icons/socials/mail.png'
@@ -14,7 +14,7 @@ import locationColor from '../assets/icons/socials/locationColor.png'
 
 const Footer = ({ imageEnter, largeEnter }) => {
   const [hoveredIconIndex, setHoveredIconIndex] = useState(null)
-  const resumeLink = import.meta.env.VITE_RESUME_URL
+  // const resumeLink = import.meta.env.VITE_RESUME_URL
   const socials = [
     {
       name: '',
@@ -43,12 +43,12 @@ const Footer = ({ imageEnter, largeEnter }) => {
       link: 'mailto:shradhakaba@gmail.com',
       target: '',
     },
-    {
-      icon: resume,
-      iconColor: resumeColor,
-      link: resumeLink,
-      target: '_blank',
-    },
+    // {
+    //   icon: resume,
+    //   iconColor: resumeColor,
+    //   link: resumeLink,
+    //   target: '_blank',
+    // },
   ]
   const container = {
     hidden: { opacity: 1, scale: 0 },
