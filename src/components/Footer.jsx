@@ -98,7 +98,7 @@ const Footer = ({ imageEnter, largeEnter }) => {
                     <br />
                   </span>
                   <span className="font-lato md:text-lg text-sm font-normal text-[#B6B6B6]">
-                    UX Researcher
+                    Product Designer
                   </span>
                 </div>
               </>

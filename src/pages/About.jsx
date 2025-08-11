@@ -78,8 +78,8 @@ const About = () => {
               }}
               className="text-lg leading-[36px] md:leading-9 text-[#fefefe] w-full my-8 md:my-10 md:text-justify md:tracking-[0.4px] md:w-[690px]"
             >
-              I’m Shradha. <br />a UX Researcher driven by purpose. I immerse myself in deciphering
-              human behaviour and patterns. From an early stage, I've believed that{' '}
+              I’m Shradha. <br />a Product Designer driven by purpose. I immerse myself in
+              deciphering human behaviour and patterns. From an early stage, I've believed that{' '}
               <span className="text-brand-gold">
                 exceptional designs are rooted in a deep understanding of people.
               </span>{' '}
